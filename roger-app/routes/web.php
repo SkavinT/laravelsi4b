@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\ProdiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,4 @@ Route::get('listdata',function(){
 
 });
 Route::resource('fakultas', FakultasController::class);
+Route::resource('prodi', ProdiController::class);
