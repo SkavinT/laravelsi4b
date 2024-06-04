@@ -42,35 +42,36 @@
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
               </div>
-            </div>
-            <div class="form-group">
-              <label for="tempat_lahir">Tempat Lahir</label>
-              <input type="text" class="form-control" name="tempat_lahir" value="{{ old ('tempat_lahir')}}" placeholder="Tanggal lahir">
-              @error('tempat_Lahir')
-                  <span class="text-danger">{{ $message }}</span>
-              @enderror
-            </div>
-            <div class="form-group">
-                <label for="url_foto">Url Foto</label>
-                <input type="text" class="form-control" name="url_foto" value="{{ old ('url_foto')}}" placeholder="link foto">
+              <div class="form-group">
+                <label for="tempat_lahir">Tempat Lahir</label>
+                <input type="text" class="form-control" name="tempat_lahir" value="{{ old ('tempat_lahir')}}" placeholder="Tanggal lahir">
                 @error('tempat_Lahir')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
               </div>
-            <div class="form-group">
-                <label for="prodi_id">Nama Program Studi</label>
-                <select name="prodi_id" class="form-control">
-                    @foreach ($prodi as $item)
-                    <option value="{{ $item['id']}}">
-                        {{$item['nama']}}
-                    </option>
-                        
-                    @endforeach
-                </select>    
-                @error('fakultas_id')
-                    <span class="text-danger">{{ $message }}</span>
-                @enderror
-              </div>
+              <div class="form-group">
+                  <label for="url_foto">Url Foto</label>
+                  <input type="text" class="form-control" name="url_foto" value="{{ old ('url_foto')}}" placeholder="link foto">
+                  @error('tempat_Lahir')
+                      <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+              <div class="form-group">
+                  <label for="prodi_id">Nama Program Studi</label>
+                  <select name="prodi_id" class="form-control">
+                      @foreach ($prodi as $item)
+                      <option value="{{ $item['id']}}">
+                          {{$item['nama']}}
+                      </option>
+                          
+                      @endforeach
+                  </select>    
+                  @error('fakultas_id')
+                      <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+            </div>
+            
               <button type="submit" class="btn btn-primary mr-2">Submit</button>
               <a href="{{url('mahasiswa')}}" class="btn btn-light"> Batal</a>
             </form>
