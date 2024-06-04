@@ -13,19 +13,21 @@
                 <p class="card-description">
                   List data Prodi
                 </p>
+                <a href="{{ route('prodi.create') }}" class="btn btn-rounded btn-primary">Tambah</a>
                 <div class="table-responsive">
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nama Prodi</th>
+                        <th>Nama Program Studi</th>
                         <th>Singkatan</th>
                         <th>Nama Fakultas</th>
                       </tr>
                     </thead>
                     <tbody>
+                        
                         @foreach ($prodi as $item)
                         <tr>
-                            <td>{{ $item ["nama"] }}</td> 
+                            <td>{{ $item ["nama"] }} </td>
                             <td>{{ $item ["singkatan"] }}</td>
                             <td>{{ $item ["fakultas"] ["nama"]}}</td>
                         </tr>
@@ -37,4 +39,16 @@
             </div>
           </div>
     </div>
+    @if (session('Success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+      <script>
+          Swal.fire({
+            title: "Good job!",
+            text: "{{session ('Success')}}",
+            icon: "success"
+        });
+      </script>
+    @endif
+        
+    
 @endsection

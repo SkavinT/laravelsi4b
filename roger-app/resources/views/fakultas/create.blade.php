@@ -24,6 +24,9 @@
               <div class="form-group">
                 <label for="singkatan">Singkatan</label>
                 <input type="text" class="form-control" name="singkatan" value="{{ old ('singkatan')}}" placeholder="FIKR,FEB...">
+                @error('singkatan')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
               </div>
               <button type="submit" class="btn btn-primary mr-2">Submit</button>
               <a href="{{url('fakultas')}}" class="btn btn-light"> Batal</a>

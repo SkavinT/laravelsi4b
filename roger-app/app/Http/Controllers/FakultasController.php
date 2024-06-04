@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fakultas;
+use App\Models\Prodi;
 use Illuminate\Http\Request;
 
 class FakultasController extends Controller
@@ -16,6 +17,7 @@ class FakultasController extends Controller
         // fakultas folder index dalemmnya
         return view ('fakultas.index') 
         ->with('fakultas', $fakultas);
+
     }
 
     /**

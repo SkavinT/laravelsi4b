@@ -1,34 +1,44 @@
 @extends('layout.main')
 
-@section('title','Fakultas')
+@section('title','Mahasiswa')
     
 @section('content')
     <h1>UMDP</h1>
-    <h2>Fakultas</h2>
+    <h2>Mahasiswa</h2>
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Fakultas</h4>
+                <h4 class="card-title">Mahasiswa</h4>
                 <p class="card-description">
-                  List data fakultas
+                  List data Mahasiswa
                 </p>
                 {{-- Tombol Tambah --}}
-                <a href="{{ route('fakultas.create') }}" class="btn btn-rounded btn-primary">Tambah</a>
+                <a href="{{ route('mahasiswa.create') }}" class="btn btn-rounded btn-primary">Tambah</a>
                 <div class="table-responsive">
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nama Fakultas</th>
-                        <th>Singkatan</th>
+                        <th>Nama Mahasiswa</th>
+                        <th>Npm</th>
+                        <th>Alamat</th>
+                        <th>Tempat lahir</th>
+                        <th>Tanggal lahir</th>
+                        <th>Program Studi</th>
+                        <th>Url Foto</th>
                       </tr>
                     </thead>
                     <tbody>
                         
-                        @foreach ($fakultas as $item)
+                        @foreach ($mahasiswa as $item)
                         <tr>
                             <td>{{ $item ["nama"] }} </td>
-                            <td>{{ $item ["singkatan"] }}</td>
+                            <td>{{ $item ["npm"] }}</td>
+                            <td>{{ $item ["alamat"] }} </td>
+                            <td>{{ $item ["tempat_lahir"] }} </td>
+                            <td>{{ $item ["tanggal_lahir"] }} </td>
+                            <td>{{ $item ["prodi"] ["nama"]}}</td>
+                            <td>{{ $item ["url_foto"]}}</td>
                         </tr>
                         @endforeach
                     </tbody>
