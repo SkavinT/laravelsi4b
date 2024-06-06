@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\MahasiswaController;
@@ -36,3 +37,4 @@ Route::get('listdata',function(){
 Route::resource('fakultas', FakultasController::class);
 Route::resource('prodi', ProdiController::class);
 Route::resource('mahasiswa',MahasiswaController::class);
+Route::get('dashboard' , [DashboardController::class, 'index']);
