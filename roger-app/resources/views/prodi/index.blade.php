@@ -13,7 +13,11 @@
                 <p class="card-description">
                   List data Prodi
                 </p>
-                <a href="{{ route('prodi.create') }}" class="btn btn-rounded btn-primary">Tambah</a>
+                @can('create', App\Prodi::class)
+                  <a href="{{ route('prodi.create') }}" class="btn btn-rounded btn-primary">
+                    Tambah</a>
+                @endcan
+
                 <div class="table-responsive">
                   <table class="table">
                     <thead>
